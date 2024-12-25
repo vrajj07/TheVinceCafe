@@ -1,0 +1,126 @@
+.offer .section_title{
+    z-index: 1;
+    position: relative;
+}
+
+.offer_item{
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    align-items: center;
+    padding: 1rem;
+}
+
+.offer_img-wrapper{
+    margin-right: -5rem;
+}
+
+.offer_img{
+    border: 2px solid var(--first-color);
+}
+
+.offer_content{
+    background-color: var(--container-color);
+    padding: 3.75rem 2.25rem;
+    position: relative;
+    border: 2px solid var(--first-color-light);
+}
+
+
+.offer_img,
+.offer_content,
+.offer_content::before{
+    border-radius: var(--radius);
+}
+
+.offer_title{
+    font-size: var(--h2-font-size);
+    margin-bottom: 1.25rem;
+}
+
+.offer_discount{
+    color: var(--first-color);
+    font-family: var(--second-font);
+    font-size: var(--large-font-size);
+    font-weight: var(--weight-500);
+}
+
+.offer_description{
+    margin-block: 0.5rem 1.5rem;
+}
+
+.swiper {
+    position: relative;
+    padding-bottom: 2rem; 
+}
+
+.swiper-pagination{
+    margin-top: 2rem;
+}
+
+.swiper-pagination-bullet{
+    width: 16px;
+    height: 16px;
+    border: 3px solid var(--title-color);
+    background-color: transparent;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active{
+    background-color: var(--first-color);
+}
+/* Responsive Styles */
+
+/* Tablets and smaller devices */
+@media screen and (max-width: 768px) {
+    .offer_item {
+        grid-template-columns: 1fr; /* Stack image and content vertically */
+        row-gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .offer_img-wrapper {
+        margin-right: 0; /* Remove margin on small screens */
+    }
+
+    .offer_content {
+        padding: 2rem; /* Adjust padding for smaller screens */
+        text-align: center; /* Center align the content */
+    }
+
+    .offer_img {
+        width: 100%;
+        height: auto;
+    }
+
+    .offer_title {
+        font-size: var(--h3-font-size); /* Reduce title size for smaller screens */
+    }
+
+    .offer_discount {
+        font-size: var(--normal-font-size); /* Adjust font size */
+    }
+
+    .swiper-pagination-bullet {
+        width: 12px; /* Adjust bullet size */
+        height: 12px;
+    }
+}
+
+/* Phones and very small devices */
+@media screen and (max-width: 480px) {
+    .offer_content {
+        padding: 1.5rem; /* Further reduce padding */
+    }
+
+    .offer_img-wrapper {
+        margin-right: 0;
+    }
+
+    .offer_title {
+        font-size: var(--h4-font-size); /* Further reduce title size */
+    }
+
+    .offer_discount {
+        font-size: var(--small-font-size); /* Adjust font size */
+    }
+}

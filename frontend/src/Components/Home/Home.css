@@ -1,0 +1,100 @@
+.home{
+    background: center/cover url(../../Assets/home-bg.jpg);
+    min-height: calc(100vh + var(--header-height));
+    display: flex;
+    align-items: center;
+}
+
+.home_container{
+    width: 100%;
+}
+
+.home_content{
+    max-width: 660px;
+}
+
+.home_subtitle,
+.home_description{
+    color: var(--title-color);
+}
+
+.home_subtitle{
+    font-family: var(--second-font);
+    font-size: var(--h1-font-size);
+    font-weight: var(--weight-500);
+}
+
+.home_title{
+    font-size: var(--biggest-font-size);
+    font-weight: var(--weight-700);
+    margin-block: 1.25rem;
+}
+
+.home_description{
+    margin-bottom: 2.25rem;
+}
+
+.home_btns{
+    display: flex;
+    column-gap: 2rem;
+}
+
+.home_btn{
+    background-color: transparent;
+    color: var(--first-color);
+}
+
+.home_btn:hover{
+    background-color: var(--first-color);
+}
+
+/* Responsive Styles */
+
+/* Tablets and smaller devices */
+@media screen and (max-width: 768px) {
+    .home_content {
+        max-width: 90%; /* Reduce content width for smaller screens */
+    }
+
+    .home_subtitle {
+        font-size: var(--h2-font-size); /* Adjust subtitle font size */
+    }
+
+    .home_title {
+        font-size: var(--h1-font-size); /* Adjust title font size */
+    }
+
+    .home_description {
+        margin-bottom: 1.5rem; /* Reduce margin for smaller screens */
+    }
+
+    .home_btns {
+        flex-direction: column; /* Stack buttons vertically */
+        row-gap: 1rem; /* Add gap between buttons */
+        column-gap: 0; /* Remove column gap */
+    }
+
+    .home_btn {
+        width: 100%; /* Make buttons full width */
+        padding: 0.5rem 1rem; /* Adjust padding */
+    }
+}
+
+/* Phones and very small devices */
+@media screen and (max-width: 480px) {
+    .home {
+        min-height: 100vh; /* Remove header height addition for small devices */
+    }
+
+    .home_title {
+        font-size: var(--h2-font-size); /* Further reduce title font size */
+    }
+
+    .home_description {
+        font-size: var(--normal-font-size); /* Adjust description font size */
+    }
+
+    .home_btn {
+        font-size: var(--small-font-size); /* Reduce button text size */
+    }
+}

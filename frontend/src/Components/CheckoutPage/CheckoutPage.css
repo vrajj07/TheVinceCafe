@@ -1,0 +1,114 @@
+/* Checkout Section */
+.checkout {
+    background: var(--container-color);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    position: relative;
+  }
+  
+  .checkout_form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .form_input {
+    width: 100%;
+    color: var(--first-color-light);
+    background: var(--bg-color);
+    border: 1px solid var(--first-color-light);
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius);
+  }
+  
+  .form_input::placeholder {
+    color: var(--first-color-light);
+  }
+  
+  .form_input-textarea .form_input {
+    height: 128px;
+    resize: none;
+    grid-column: 1 / -1;
+  }
+  
+  .checkout_buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .btn {
+    display: inline-block;
+    color: var(--title-color);
+    background: var(--first-color);
+    border: 2px solid var(--first-color);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: transparent;
+    color: var(--first-color);
+  }
+  
+  /* Responsive Design */
+
+/* Tablets and Smaller Devices */
+@media screen and (max-width: 768px) {
+  .checkout {
+      padding: 2rem; /* Reduce padding for smaller screens */
+  }
+
+  .checkout_form {
+      grid-template-columns: repeat(2, 1fr); /* Change to two columns */
+      gap: 1rem; /* Reduce gap */
+  }
+
+  .form_input-textarea .form_input {
+      height: 120px; /* Slightly reduce height */
+  }
+
+  .checkout_buttons {
+      flex-direction: column; /* Stack buttons vertically */
+      gap: 1rem; /* Add gap between buttons */
+  }
+
+  .btn {
+      width: 100%; /* Make buttons full width */
+      padding: 0.75rem 1rem; /* Adjust padding */
+      text-align: center; /* Center button text */
+  }
+}
+
+/* Phones and Very Small Devices */
+@media screen and (max-width: 480px) {
+  .checkout {
+      padding: 1.5rem; /* Further reduce padding */
+  }
+
+  .checkout_form {
+      grid-template-columns: 1fr; /* Stack form fields vertically */
+      gap: 0.75rem; /* Further reduce gap */
+  }
+
+  .form_input {
+      padding: 0.75rem 1rem; /* Adjust padding for inputs */
+      font-size: var(--small-font-size); /* Adjust font size if defined */
+  }
+
+  .form_input-textarea .form_input {
+      height: 100px; /* Further reduce height */
+  }
+
+  .checkout_buttons {
+      flex-direction: column; /* Ensure buttons are stacked */
+  }
+
+  .btn {
+      padding: 0.5rem 1rem; /* Further adjust padding */
+      font-size: var(--tiny-font-size); /* Adjust font size if defined */
+  }
+}
+  

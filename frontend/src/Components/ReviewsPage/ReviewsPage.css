@@ -1,0 +1,109 @@
+/* Add Review Section */
+.add_review {
+    background: var(--container-color);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    position: relative;
+}
+
+.add_review_form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    z-index: 10;
+}
+
+.form_input {
+    width: 100%;
+    color: var(--first-color-light);
+    background: var(--bg-color);
+    border: 1px solid var(--first-color-light);
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius);
+}
+
+.form_input::placeholder {
+    color: var(--first-color-light);
+}
+
+.form_input-textarea .form_input {
+    height: 128px;
+    resize: none;
+}
+
+.form_input-textarea,
+.add_review_btn {
+    grid-column: 1 / -1;
+}
+
+.add_review_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--first-color);
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add_review_btn:hover {
+    background-color: var(--first-color-dark);
+}
+
+/* Specific styling for date and time input */
+.date-input::-webkit-calendar-picker-indicator,
+.time-input::-webkit-calendar-picker-indicator {
+    filter: invert(69%) sepia(71%) saturate(604%) hue-rotate(3deg) brightness(95%) contrast(94%);
+    cursor: pointer;
+}
+
+.date-input, 
+.time-input {
+    color: var(--first-color-light);
+}
+
+/* Rating Section */
+.rating-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--normal-font-size);
+    color: var(--first-color-light);
+}
+
+/* Responsive Design */
+
+/* Tablets and smaller devices */
+@media screen and (max-width: 768px) {
+    .add_review_form {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .add_review {
+        padding: 2rem;
+    }
+
+    .add_review_btn {
+        padding: 1rem;
+    }
+}
+
+/* Phones and very small devices */
+@media screen and (max-width: 480px) {
+    .add_review_form {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .add_review {
+        padding: 1.5rem;
+    }
+
+    .add_review_btn {
+        padding: 0.75rem 1.5rem;
+    }
+}

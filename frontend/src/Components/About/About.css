@@ -1,0 +1,86 @@
+.about{
+    padding-bottom: 0;
+}
+
+.about_grid{
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 3rem;
+}
+
+.about_img-wrapper{
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.about_img-wrapper::before{
+    content: '';
+    position: absolute;
+    bottom: -1.125rem;
+    left: 0;
+    background-color: var(--first-color);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.about_content{
+    margin-top: 2.5rem;
+}
+
+.about_details{
+    margin-block: 1.25rem 2.25rem;
+}
+
+.about_details-description{
+    display: flex;
+    align-items: center;
+}
+
+.about_details,
+.about_details-description{
+    gap: 0.625rem;
+}
+
+/* Responsive Styles */
+
+/* Tablets and smaller devices */
+@media screen and (max-width: 768px) {
+    .about_grid {
+        grid-template-columns: 1fr; /* Stack image and content vertically */
+        column-gap: 0; /* Remove column gap */
+    }
+
+    .about_img-wrapper {
+        padding-left: 0; /* Remove left padding for small screens */
+        margin-bottom: 2rem; /* Add margin for better spacing between image and content */
+    }
+
+    .about_img-wrapper::before {
+        height: 110%; /* Adjust background block height for smaller screens */
+    }
+
+    .about_content {
+        margin-top: 0; /* Remove top margin for better alignment */
+    }
+
+    .about_details {
+        margin-block: 1rem 2rem; /* Adjust margins for small screens */
+    }
+}
+
+/* Phones and very small devices */
+@media screen and (max-width: 480px) {
+    .about_img-wrapper::before {
+        height: 105%; /* Further adjust background block height */
+    }
+
+    .about_details-description {
+        flex-direction: column; /* Stack description items vertically for small screens */
+        align-items: flex-start;
+    }
+
+    .about_details {
+        margin-block: 0.75rem 1.5rem; /* Tweak spacing for better readability */
+    }
+}

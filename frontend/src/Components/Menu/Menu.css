@@ -1,0 +1,121 @@
+.menu{
+    background: url(../../Assets/bg.jpg) center / cover fixed;
+    position: relative;
+}
+
+.menu::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--hsla);
+}
+
+.menu .section_title,
+.menu_grid{
+    z-index: 1;
+    position: relative;
+}
+
+.menu_grid{
+    grid-template-columns: repeat(2,1fr);
+}
+
+.menu_item{
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--container-color);
+    padding: 1.25rem;
+    border-radius: var(--radius);
+    transition: 0.5s var(--transition);
+}
+
+.menu_img-wrapper{
+    border: 2px dashed var(--first-color);
+    padding: 3px;
+    width: 80px;
+    height: 80px;
+}
+
+.menu_img-wrapper,
+.menu_img{
+    border-radius: 50%;
+}
+
+.menu_data{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 0.75rem;
+}
+
+.menu_title,
+.menu_price{
+    color: var(--first-color);
+}
+
+.menu_title{
+    font: var(--large-font-size);
+    margin-bottom: 0.25rem;
+}
+
+.menu_price{
+    border-left: 2px dashed var(--first-color);
+    padding-left: 1.5rem;
+    font-size: var(--larger-font-size);
+    font-weight: var(--weight-600);
+}
+
+/* HOVER EFFECT */
+
+.menu_item:hover{
+    transform: translateY(-0.5rem);
+    /* box-shadow: 5px 5px 15px rgba(232, 171, 38, 2); */
+    filter: drop-shadow(0px 0px 10px rgba(232, 171, 38, 2));
+}
+
+/* Responsive Styles */
+
+/* Tablets and smaller devices */
+@media screen and (max-width: 768px) {
+    .menu_grid {
+        grid-template-columns: 1fr; /* Stack items in a single column */
+        gap: 1.5rem;
+    }
+
+    .menu_item {
+        padding: 1rem; /* Adjust padding */
+    }
+
+    .menu_img-wrapper {
+        width: 70px; /* Slightly smaller image */
+        height: 70px;
+    }
+
+    .menu_price {
+        font-size: var(--normal-font-size); /* Adjust font size */
+    }
+}
+
+/* Phones and very small devices */
+@media screen and (max-width: 480px) {
+    .menu_item {
+        padding: 0.75rem; /* Reduce padding further */
+    }
+
+    .menu_img-wrapper {
+        width: 60px; /* Smaller image for smaller screens */
+        height: 60px;
+    }
+
+    .menu_title {
+        font-size: var(--normal-font-size); /* Adjust font size for titles */
+    }
+
+    .menu_price {
+        font-size: var(--small-font-size); /* Smaller font size for prices */
+    }
+}

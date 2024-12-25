@@ -1,0 +1,117 @@
+.features_grid{
+    grid-template-columns: repeat(4, 1fr);
+}
+  
+.features_item{
+    background-color: var(--container-color);
+    padding: 2rem;
+    border-radius: var(--radius);
+    position: relative;
+    transition: 0.5s var(--transition);
+}
+
+.features_item::before{
+    content: '';
+    position: absolute;
+    inset: 0.75rem;
+    border: 2px solid var(--first-color);
+    opacity: 0.2;
+    border-radius: inherit;
+}
+  
+.feature_img{
+    width: 60px;
+    margin-bottom: 1.25rem;
+}
+  
+.feature_title{
+    font-size: var(--h3-font-size);
+    margin-bottom: 0.625rem;
+}
+
+.feature_shape{
+    position: absolute;
+    width: 120px;
+    right: 1.25rem;
+    top: 3rem;
+    opacity: 0.2;
+}
+ 
+/* HOVER EFFECT */
+
+.features_item:hover{
+    transform: translateY(-0.5rem);
+    box-shadow: 5px 5px 10px rgba(232, 171, 38, 0.5);
+}
+
+/* Responsive Styles */
+
+/* Large Devices (Desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+  }
+  
+  /* Medium Devices (Tablets, 768px to 1199px) */
+  @media screen and (max-width: 1199px) and (min-width: 768px) {
+    .container {
+      max-width: 960px;
+    }
+  
+    .features_grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+  }
+  
+  /* Small Devices (Landscape Phones, 576px to 767px) */
+  @media screen and (max-width: 767px) and (min-width: 576px) {
+    .container {
+      max-width: 720px;
+    }
+  
+    .features_grid {
+      grid-template-columns: repeat(1, 1fr); /* 1 column on small devices */
+    }
+  
+    .section_title {
+      font-size: 1.75rem;
+    }
+  
+    .feature_title {
+      font-size: 1.25rem;
+    }
+  
+    .feature_description {
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* Extra Small Devices (Portrait Phones, below 576px) */
+  @media screen and (max-width: 575px) {
+    .container {
+      max-width: 100%;
+      padding: 0 10px;
+    }
+  
+    .features_grid {
+      grid-template-columns: 1fr; /* 1 column on extra small devices */
+    }
+  
+    .features_item {
+      padding: 15px;
+    }
+  
+    .feature_title {
+      font-size: 1.2rem;
+    }
+  
+    .feature_description {
+      font-size: 0.9rem;
+    }
+  
+    .feature_shape {
+      width: 25px;
+      height: 25px;
+    }
+  }

@@ -1,0 +1,15 @@
+.star_rating{
+    display: inline-block;
+    font-size: 30px;
+    color: var(--first-color-light); 
+    cursor: pointer;
+}
+
+.star_rating .star {
+    padding: 0 4px;
+    transition: color 0.2s ease;
+}
+
+.star_rating .star.filled {
+    color: var(--first-color);
+}

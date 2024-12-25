@@ -1,0 +1,151 @@
+/* Reservation Section */
+.reservation {
+    background: var(--container-color);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    position: relative;
+}
+
+.reservation_form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    z-index: 10;
+}
+
+.form_input {
+    width: 100%;
+    color: var(--first-color-light);
+    background: var(--bg-color);
+    border: 1px solid var(--first-color-light);
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius);
+}
+
+.form_input::placeholder {
+    color: var(--first-color-light);
+}
+
+.form_input-textarea .form_input {
+    height: 128px;
+    resize: none;
+}
+
+.form_input-textarea,
+.reservation_btn {
+    grid-column: 1 / -1;
+}
+
+.reservation_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--first-color);
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reservation_btn:hover {
+    background-color: var(--first-color-dark);
+}
+
+/* Specific styling for date and time input */
+.date-input::-webkit-calendar-picker-indicator,
+.time-input::-webkit-calendar-picker-indicator {
+    filter: invert(69%) sepia(71%) saturate(604%) hue-rotate(3deg) brightness(95%) contrast(94%);
+    cursor: pointer;
+}
+
+.date-input, 
+.time-input {
+    color: var(--first-color-light);
+}
+
+/* Notification Popup */
+.notification-popup {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--title-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px var(--first-color);
+    z-index: 1000;
+    opacity: 0.9;
+    transition: opacity 0.5s ease;
+    font-size: var(--normal-font-size);
+}
+
+.notification-popup span {
+    color: var(--first-color);
+}
+
+/* Shapes (decorative) */
+.shape_two,
+.shape_three {
+    position: absolute;
+    width: 180px;
+}
+
+.shape_two {
+    right: 1.25rem;
+    top: 0.5rem;
+}
+
+.shape_three {
+    left: 1.25rem;
+    top: 0.5rem;
+}
+
+/* Responsive Design */
+
+/* Tablets and smaller devices */
+@media screen and (max-width: 768px) {
+    .reservation_form {
+        grid-template-columns: 1fr 1fr; /* Two columns on smaller screens */
+        gap: 1rem; /* Adjust gap */
+    }
+
+    .form_input-textarea,
+    .reservation_btn {
+        grid-column: 1 / -1; /* Full width */
+    }
+
+    .reservation {
+        padding: 2rem; /* Adjust padding */
+    }
+
+    .reservation_btn {
+        padding: 1rem; /* Adjust button padding */
+    }
+
+    .shape_two, .shape_three {
+        width: 150px; /* Reduce shape size */
+    }
+}
+
+/* Phones and very small devices */
+@media screen and (max-width: 480px) {
+    .reservation_form {
+        grid-template-columns: 1fr; /* Stack form fields in a single column */
+        gap: 1rem;
+    }
+
+    .reservation {
+        padding: 1.5rem; /* Further reduce padding */
+    }
+
+    .reservation_btn {
+        padding: 0.75rem 1.5rem; /* Smaller button padding */
+    }
+
+    .shape_two, .shape_three {
+        width: 100px; /* Further reduce shape size */
+    }
+}
