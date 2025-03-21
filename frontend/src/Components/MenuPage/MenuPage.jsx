@@ -16,7 +16,7 @@ const MenuPage = () => {
     // Fetch data from the API
     const fetchMenuItems = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/Menu/');
+        const response = await axios.get(`${process.env.VITE_API_URL}Menu/`);
         setMenuItems(response.data); // Assuming the response is an array of menu items
         setLoading(false);
       } catch (error) {

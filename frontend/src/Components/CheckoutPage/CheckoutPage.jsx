@@ -38,7 +38,7 @@ const CheckoutPage = () => {
 
     try {
       // Make a POST request to the Django API
-      const response = await axios.post('http://127.0.0.1:8000/api/checkout/', payload);
+      const response = await axios.post(`${process.env.VITE_API_URL}checkout/`, payload);
 
       if (response.status === 201) { // HTTP 201 Created
         setMessage('Checkout successful! Redirecting to payment...');

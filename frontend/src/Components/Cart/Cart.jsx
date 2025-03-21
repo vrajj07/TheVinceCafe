@@ -13,7 +13,7 @@ const Cart = () => {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/Cart/');
+        const response = await axios.get(`${process.env.VITE_API_URL}Cart/`);
         setCartItems(response.data);
         setLoading(false);
       } catch (error) {
@@ -30,7 +30,7 @@ const Cart = () => {
 
   const handleRemoveFromCart = async (itemId) => {
     try {
-      const response = await axios.delete(`http://localhost:8000/api/Cart/${itemId}/`);
+      const response = await axios.delete(`${process.env.VITE_API_URL}Cart/${itemId}/`);
       if (response.status === 204) {
         setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
       } else {
@@ -45,7 +45,7 @@ const Cart = () => {
   const handleQuantityChange = async (itemId, newQuantity) => {
     if (newQuantity < 1) return;
     try {
-      const response = await axios.patch(`http://localhost:8000/api/Cart/${itemId}/`, { quantity: newQuantity });
+      const response = await axios.patch(`${process.env.VITE_API_URL}Cart/${itemId}/`, { quantity: newQuantity });
       if (response.status === 200) {
         setCartItems((prevItems) =>
           prevItems.map((item) => (item.id === itemId ? { ...item, quantity: newQuantity } : item))
